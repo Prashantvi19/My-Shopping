@@ -68,8 +68,15 @@
 			<div class="heading">
 				<h2 style="color: red">Something is wrong</h2>
 			</div>
-			<%
-			}
+		<%
+		}if (msg.equals("ProductEditButUserCartStillShow")) {
+		%>
+		<div class="heading">
+			<h2 style="color: red">The product has been updated, but it was
+				not removed from the user cart.</h2>
+		</div>
+		<%
+		}
 		}
 		%>
 		<!-- ============================================================== -->
@@ -107,10 +114,7 @@
 						</div>
 						<div class="ribbons"></div>
 						<div class="ribbons-text">New</div>
-						<div class="">
-							<a href="#" class="product-wishlist-btn"><i
-								class="fas fa-heart"></i></a>
-						</div>
+						
 					</div>
 					<div class="product-content">
 						<div class="product-content-head">
@@ -136,9 +140,7 @@
 						<div class="product-btn">
 							<a
 								href="${pageContext.request.contextPath}/Project/Admin/editProduct.jsp?PrIn=<%=rs.getInt(1)%>&msg1=index"
-								class="btn btn-primary">Edit Product</a> <a href="#"
-								class="btn btn-outline-light">Add to cart<i
-								class="fas fa-dolly-flatbed"></i></a>
+								class="btn btn-primary">Edit Product</a> 
 						</div>
 
 					</div>
@@ -188,10 +190,7 @@
 						</div>
 						<div class="ribbons"></div>
 						<div class="ribbons-text">New</div>
-						<div class="">
-							<a href="#" class="product-wishlist-btn"><i
-								class="fas fa-heart"></i></a>
-						</div>
+						
 					</div>
 					<div class="product-content">
 						<div class="product-content-head">
@@ -216,9 +215,7 @@
 						<div class="product-btn">
 							<a
 								href="${pageContext.request.contextPath}/Project/Admin/editProduct.jsp?PrIn=<%=rs.getInt(1)%>&msg1=index"
-								class="btn btn-primary">Edit Product</a> <a href="#"
-								class="btn btn-outline-light">Add to cart<i
-								class="fas fa-dolly-flatbed"></i></a>
+								class="btn btn-primary">Edit Product</a>
 						</div>
 
 					</div>

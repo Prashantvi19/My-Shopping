@@ -1,12 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<% if (session.getAttribute("Adminlogin") == null){
+<%
+if (session.getAttribute("Adminlogin") == null) {
 
 	response.sendRedirect("../client/singin.jsp?msg=login");
-} %>
+}
+%>
 <%@ include file="headerAdmin.jsp"%>
 <div class="dashboard-ecommerce">
 	<div class="container-fluid dashboard-content ">
+		<div class="row">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="page-header">
+					<h2 class="pageheader-title">Admin Dashboard</h2>
+					<div class="page-breadcrumb">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"
+									class="breadcrumb-link">Admin Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page"> Add Product</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- ============================================================== -->
 		<!-- pageheader  -->
 		<!-- ============================================================== -->
@@ -19,7 +37,7 @@
 						<%
 						String msg = request.getParameter("msg");
 						if (msg != null) {
-						if (msg.equals("invalid")) {
+							if (msg.equals("invalid")) {
 						%>
 						<div class="heading">
 							<h2 style="color: red">Something went wrong</h2>

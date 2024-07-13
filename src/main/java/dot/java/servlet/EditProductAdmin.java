@@ -67,25 +67,38 @@ public class EditProductAdmin extends HttpServlet {
 					productName + " " + category + " " + price + " " + activeStatus + " " + productID + " " + ps);
 			msg = InsertData.insertData(ps);
 			if (msg.equals("valid")) {
-				msg = "ProductEdit";
+				if (activeStatus.equals("no")) {
+					String query2 = "DELETE FROM `usercards` WHERE `product_id`=? AND `billNo`IS NULL AND `orderedDate` IS NULL AND `status` IS NULL;";
+					PreparedStatement ps2 = DB_Connection.getDBConPs(query2);
+					ps2.setString(1, productID);
 
-			}else {
+					System.out.println(activeStatus + " " + productID + " " + ps2);
+					msg = InsertData.insertData(ps2);
+
+					msg = "ProductEdit";
+
+				} else if (activeStatus.equals("yes")) {
+					msg = "ProductEdit";
+				} else {
+					msg = "ProductEditButUserCartStillShow";
+				}
+			} else {
 				msg = "ProductDidn'tEdit";
 			}
 			ps.close();
 			DB_Connection.DBClose();
-			if ("index".equals(pager)){
+			if ("index".equals(pager)) {
 				response.sendRedirect("Project/Admin/index.jsp?msg=" + msg);
-			}else {
+			} else {
 				response.sendRedirect("Project/Admin/LsitForEditPage.jsp?msg=" + msg);
 			}
 
-		}catch(Exception e){
-			msg ="failed";
+		} catch (Exception e) {
+			msg = "failed";
 			System.out.println(e);
-			if ("index".equals(pager)){
+			if ("index".equals(pager)) {
 				response.sendRedirect("Project/Admin/index.jsp?msg=" + msg);
-			}else {
+			} else {
 				response.sendRedirect("Project/Admin/LsitForEditPage.jsp?msg=" + msg);
 			}
 		}

@@ -21,7 +21,7 @@
 				<%
 				String msg = request.getParameter("msg");
 				if (msg != null) {
-					if (msg.equals("registrationIsDone")) {
+					if (msg.equals("registrationIsDone.")) {
 				%>
 				<div class="heading">
 					<h2 style="color: red">Successfully SignUp, Thanks!</h2>

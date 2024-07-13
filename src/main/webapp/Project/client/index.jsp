@@ -32,7 +32,9 @@
 							<!-- /header-text -->
 						</div>
 						<div class="item">
-							<img src="${pageContext.request.contextPath}/productsImages/photos_shopping/slider-2.jpg" alt="Second slide">
+							<img
+								src="${pageContext.request.contextPath}/productsImages/photos_shopping/slider-2.jpg"
+								alt="Second slide">
 							<!-- Static Header -->
 							<div class="header-text hidden-xs">
 								<div class="col-md-12 text-center"></div>
@@ -47,16 +49,18 @@
 							</div>
 							<!-- /header-text -->
 						</div>
-						
+
 						<div class="item">
-							<img src="${pageContext.request.contextPath}/productsImages/photos_shopping/slider-1.jpg" alt="Second slide">
+							<img
+								src="${pageContext.request.contextPath}/productsImages/photos_shopping/slider-1.jpg"
+								alt="Second slide">
 							<!-- Static Header -->
 							<div class="header-text hidden-xs">
 								<div class="col-md-12 text-center"></div>
 							</div>
 							<!-- /header-text -->
 						</div>
-						
+
 					</div>
 					<!-- Controls -->
 					<a class="left carousel-control" href="#carousel-example-generic"
@@ -85,32 +89,44 @@
 		</div>
 		<div class="row">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#featured">FEATURED PRODUCTS</a></li>
-				<li><a href="#new">NEWS</a></li>
+				<li class="active"><a href="#">Refresh</a></li>
 			</ul>
 			<div class="tab-content">
-			<% String msgc = "";
-							msgc = request.getParameter("msg");
-							if(msgc != null){
-							if (msgc.equals("productAdded")) {
-							%>
-							<div class="heading">
-								<h2 style="color: red">Product Successfully Added</h2>
-							</div>
-							<%
-							}if (msgc.equals("addToCartException")) {
-							%>
-							<div class="heading">
-								<h2 style="color: red">Something went wrong</h2>
-							</div>
-							<%
-							}if (msgc.equals("productQuantity")) {
-							%>
-							<div class="heading">
-								<h2 style="color: red">Product already added quantity increased </h2>
-							</div>
-							<%
-							}}%>
+				<%
+				String msgc = "";
+				msgc = request.getParameter("msg");
+				if (msgc != null) {
+					if (msgc.equals("productAdded")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Product Successfully Added</h2>
+				</div>
+				<%
+				}
+				if (msgc.equals("addToCartException")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Something went wrong</h2>
+				</div>
+				<%
+				}
+				if (msgc.equals("productQuantity")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Product already added quantity
+						increased</h2>
+				</div>
+				<%
+				}
+				if (msgc.equals("login")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Please log in before proceeding.</h2>
+				</div>
+				<%
+				}
+				}
+				%>
 				<div id="featured" class="tab-pane fade in active">
 					<div class="products">
 
@@ -140,15 +156,12 @@
 							<div class="col-sm-4">
 								<div class="product">
 									<div class="image">
-										<a href="product.html"><img
+										<a href="#"><img
 											src="${pageContext.request.contextPath}/productsImages/<%=rs.getString(6)%>" /></a>
 										<ul class="buttons">
-											<li><a class="btn btn-2 cart" href="${pageContext.request.contextPath}/addpocartproduct?product=<%=rs.getString(1)%>"><span
-													class="glyphicon glyphicon-shopping-cart"></span></a></li>
-											<li><a class="btn btn-2 wishlist" href="#"><span
-													class="glyphicon glyphicon-heart"></span></a></li>
-											<li><a class="btn btn-2 compare" href="#"><span
-													class="glyphicon glyphicon-transfer"></span></a></li>
+											<li><a class="btn btn-2 cart"
+												href="${pageContext.request.contextPath}/addpocartproduct?product=<%=rs.getString(1)%>"><span
+													class="glyphicon glyphicon-shopping-cart"></span></a>
 										</ul>
 									</div>
 									<div class="caption">
@@ -159,7 +172,7 @@
 										</div>
 										<div class="name">
 											<h3>
-												<a href="product.html">Category : <%=rs.getString(3)%></a>
+												<a href="#">Category : <%=rs.getString(3)%></a>
 											</h3>
 										</div>
 										<div class="price"><%=rs.getString(4)%><span>RS400</span>
@@ -207,15 +220,12 @@
 							<div class="col-sm-3">
 								<div class="product">
 									<div class="image">
-										<a href="product.html"><img
+										<a href="#"><img
 											src="${pageContext.request.contextPath}/productsImages/<%=rs.getString(6)%>" /></a>
 										<ul class="buttons">
-											<li><a class="btn btn-2 cart" href="${pageContext.request.contextPath}/addpocartproduct?product=<%=rs.getString(1)%>"><span
-													class="glyphicon glyphicon-shopping-cart"></span></a></li>
-											<li><a class="btn btn-2 wishlist" href="#"><span
-													class="glyphicon glyphicon-heart"></span></a></li>
-											<li><a class="btn btn-2 compare" href="#"><span
-													class="glyphicon glyphicon-transfer"></span></a></li>
+											<li><a class="btn btn-2 cart"
+												href="${pageContext.request.contextPath}/addpocartproduct?product=<%=rs.getString(1)%>"><span
+													class="glyphicon glyphicon-shopping-cart"></span></a>
 										</ul>
 									</div>
 									<div class="caption">
@@ -226,7 +236,7 @@
 										</div>
 										<div class="name">
 											<h3>
-												<a href="product.html">Category : <%=rs.getString(3)%></a>
+												<a href="#">Category : <%=rs.getString(3)%></a>
 											</h3>
 										</div>
 										<div class="price"><%=rs.getString(4)%><span>RS400</span>
@@ -267,24 +277,24 @@
 		<div class="row">
 			<div class="banner">
 				<div class="col-sm-6">
-					<img src="images/sub-banner4.jpg"/>
+					<img src="images/sub-banner4.jpg" />
 				</div>
 				<div class="col-sm-6">
-					<img src="images/sub-banner5.jpg"/>
+					<img src="images/sub-banner5.jpg" />
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
- <!-- <a id ="autoloadd" href="${pageContext.request.contextPath}/Project/client/profile.jsp">loadpage</a> -->
+<!-- <a id ="autoloadd" href="${pageContext.request.contextPath}/Project/client/profile.jsp">loadpage</a> -->
 <script type="text/javascript">
-        // Function to automatically click the anchor tag
-        function autoClickAnchor() {
-            document.getElementById("autoload").click();
-        }
+	// Function to automatically click the anchor tag
+	function autoClickAnchor() {
+		document.getElementById("autoload").click();
+	}
 
-        // Add an event listener to call the function when the page loads
-     //   window.onload = autoClickAnchor;
-    </script>
+	// Add an event listener to call the function when the page loads
+	//   window.onload = autoClickAnchor;
+</script>
 
 <%@ include file="clientFooter.jsp"%>

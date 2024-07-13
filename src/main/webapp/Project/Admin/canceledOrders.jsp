@@ -22,8 +22,7 @@
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="#"
 									class="breadcrumb-link">Admin Dashboard</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Home
-									Page</li>
+								<li class="breadcrumb-item active" aria-current="page"> Canceled Order</li>
 							</ol>
 						</nav>
 					</div>

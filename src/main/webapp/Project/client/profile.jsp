@@ -6,7 +6,7 @@ if (session.getAttribute("login") == null) {
 	response.sendRedirect("index.jsp?msg=login");
 }
 %>
-<%@include file="clientHeader.jsp"%>
+<%@include file="clientHeader.jsp"%> 
 <%@ page import="java.io.IOException"%>
 <%@ page import="java.sql.PreparedStatement"%>
 <%@ page import="java.sql.ResultSet"%>
