@@ -89,7 +89,7 @@
 		</div>
 		<div class="row">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#">Refresh</a></li>
+				<li class="active"><a href="${pageContext.request.contextPath}/Project/client/index.jsp">Refresh</a></li>
 			</ul>
 			<div class="tab-content">
 				<%
