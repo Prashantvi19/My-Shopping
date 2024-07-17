@@ -52,7 +52,13 @@ if (session.getAttribute("Adminlogin") == null) {
 							<h2 style="color: red">Product Successfully Added</h2>
 						</div>
 						<%
-						}
+						}if (msg.equals("fileError")) {
+							%>
+							<div class="heading">
+								<h2 style="color: red">Product photo error</h2>
+							</div>
+							<%
+							}
 						}
 						%>
 						<form method="post"

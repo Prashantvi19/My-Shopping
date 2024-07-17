@@ -12,6 +12,7 @@ public class FileAddAdress {
 			byte[] bytes = new byte[inSt.available()];
 			inSt.read(bytes);
 			FileOutputStream fileUp = new FileOutputStream(path);
+			System.out.println(path);
 			fileUp.write(bytes);
 			fileUp.flush();
 			fileUp.close();

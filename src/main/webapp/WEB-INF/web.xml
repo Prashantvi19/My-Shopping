@@ -77,7 +77,7 @@
 			<servlet-name>CartRemoveUpdateQuantity</servlet-name>
 			<url-pattern>/userCartUpdate</url-pattern>
 		</servlet-mapping>
-		
+
 		<servlet>
 			<description></description>
 			<display-name>PlaceOrder</display-name>
