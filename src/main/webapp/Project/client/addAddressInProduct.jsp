@@ -74,6 +74,7 @@ if (session.getAttribute("login") == null) {
 					</div>
 					<%
 					}
+				
 				}
 				%>
 				<form id="ff2"

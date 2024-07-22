@@ -1,5 +1,6 @@
 package dot.java.servlet;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -64,11 +65,23 @@ public class AddProduct extends HttpServlet {
 			fileName = timestamp + fileName;
 
 //		String path = getServletContext().getRealPath("/"+"productsImages/"+ File.separator + fileName);
-			String path = "E:/git/JavaEclipse/my_shopping/src/main/webapp/productsImages" + File.separator + fileName;
+//			String path = "E:/git/JavaEclipse/my_shopping/src/main/webapp/productsImages" + File.separator + fileName;
+			// Get the ServletContext to determine the real path dynamically
+	        ServletContext context = getServletContext();
+	        String uploadPath = context.getRealPath("/productsImages");
+
+	        // Ensure the directory exists
+	        File uploadDir = new File(uploadPath);
+	        if (!uploadDir.exists()) {
+	            uploadDir.mkdirs();
+	            System.out.println(uploadPath + " tst after dynamic path return uploadDir" + uploadDir);
+	        }
+			
+			String path = uploadPath + File.separator + fileName;
 			InputStream inSt = part.getInputStream();
 			boolean test = FileAddAdress.proUploadFile(inSt, path);
 //			boolean test = false;
-			System.out.println(path + " tst return" + test);
+			System.out.println(path + " uploadDir tst after dynamic path return " + test);
 
 			if (test) {
 				String productName = request.getParameter("productName");

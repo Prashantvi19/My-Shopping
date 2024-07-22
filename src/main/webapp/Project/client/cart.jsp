@@ -60,7 +60,7 @@ if (session.getAttribute("login") == null) {
 			<h2 style="color: red">Quantity Decreased. </h2>
 		</div>
 		<%
-		}if (msgc.equals("quantityIsOne")) {
+		}if (msgc.equals("quantityIsOne")){
 			%>
 		<div class="heading">
 			<h2 style="color: red">Quantity can't be decreased below one. </h2>
@@ -97,6 +97,7 @@ if (session.getAttribute("login") == null) {
 		</div>
 		<%
 		}
+		
 		}
 		%>
 
