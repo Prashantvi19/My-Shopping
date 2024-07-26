@@ -54,7 +54,7 @@ if ("login".equals(logins)) {
 		System.out.println(pss);
 		rss = SelectQuery.selectQuery(pss);
 		if (rss.next()) {
-			totalCart =rss.getString("totalcart");
+	totalCart = rss.getString("totalcart");
 	rss.close();
 	pss.close();
 	DB_Connection.DBClose();
@@ -71,11 +71,11 @@ String sec = (String) session.getAttribute("login");
 if (session.getAttribute("login") != null) {
 	url = "../Admin/logout.jsp?msg=client";
 	lavel = "Logout";
-	
-} else  {
+
+} else {
 	url = "../client/singin.jsp";
 	lavel = "Login";
-	
+
 }
 %>
 </head>
@@ -115,7 +115,8 @@ if (session.getAttribute("login") != null) {
 			<div class="row">
 				<div class="col-md-1">
 					<div id="logo">
-						<img src="${pageContext.request.contextPath}/productsImages/myShopping logo.png" />
+						<img
+							src="${pageContext.request.contextPath}/productsImages/myShopping logo.png" />
 					</div>
 				</div>
 				<div class="col-md-11 text-right">
@@ -139,7 +140,7 @@ if (session.getAttribute("login") != null) {
 				<div id="cart">
 					<a class="btn btn-cart"
 						href="${pageContext.request.contextPath}/Project/client/cart.jsp"><span
-						class="glyphicon glyphicon-shopping-cart"></span>My CART<strong><%= totalCart %></strong></a>
+						class="glyphicon glyphicon-shopping-cart"></span>My CART<strong><%=totalCart%></strong></a>
 				</div>
 			</div>
 		</div>
@@ -156,12 +157,22 @@ if (session.getAttribute("login") != null) {
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath}/Project/client/index.jsp">Home</a></li>
-					<li ><a href="${pageContext.request.contextPath}/Project/client/myOrders.jsp">My Orders</a></li>
-					<li ><a href="${pageContext.request.contextPath}/Project/client/profile.jsp">My Profile</a></li>
-					<li ><a href="${pageContext.request.contextPath}/Project/client/contact.jsp">Contact Us</a></li>
-					<li ><a href="${pageContext.request.contextPath}/Project/client/feedback.jsp">Feedback</a></li>
-					
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/index.jsp">Home</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/myOrders.jsp">My
+							Orders</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/profile.jsp">My
+							Profile</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/contact.jsp">Contact
+							Us</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/feedback.jsp">Feedback</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/Project/client/aboutUs.jsp">About
+							Us</a></li>
 				</ul>
 			</div>
 		</div>
