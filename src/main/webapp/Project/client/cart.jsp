@@ -145,12 +145,12 @@ if (session.getAttribute("login") == null) {
 				<div class="col-md-9">
 					<div class="caption">
 						<div class="name">
-							<h3>
+							<h3> Product :
 								<a href="#"><%=rs.getString(1)%></a>
 							</h3>
 						</div>
 						<div class="name">
-							<h3>
+							<h3>Category :
 								<a href="#"><%=rs.getString(4)%></a>
 							</h3>
 						</div>
@@ -236,12 +236,12 @@ if (session.getAttribute("login") == null) {
 				<div class="col-md-9">
 					<div class="caption">
 						<div class="name">
-							<h3>
+							<h3> Product :
 								<a href="#"><%=rs2.getString(1)%></a>
 							</h3>
 						</div>
 						<div class="name">
-							<h3>
+							<h3>Category :
 								<a href="#"><%=rs2.getString(4)%></a>
 							</h3>
 						</div>

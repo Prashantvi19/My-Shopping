@@ -44,7 +44,7 @@
 				if (msg.equals("valid")) {
 				%>
 				<div class="heading">
-					<h2 style="color: red">Successfully forgot password, Thanks!</h2>
+					<h2 style="color: red">Password reset successful. Thank you!</h2>
 				</div>
 				<%
 				}

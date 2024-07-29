@@ -12,6 +12,36 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-lg-12">
+				<%
+				String msg = request.getParameter("msg");
+				if (msg != null) {
+					if (msg.equals("needLogin")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Please log in before proceeding.</h2>
+				</div>
+				<%
+				}
+				if (msg.equals("invalidEmailPassword")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Email or password is wrong.</h2>
+				</div>
+				<%
+				}
+				if (msg.equals("invalid")) {
+				%>
+				<div class="heading">
+					<h2 style="color: red">Server Error.</h2>
+				</div>
+				<%
+				}
+				}
+				%>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-3">
 				<script type="text/javascript">
 					function submitForm() {
@@ -23,32 +53,7 @@
 
 
 			</div>
-			<%
-			String msg = request.getParameter("msg");
-			if (msg != null) {
-				if (msg.equals("needLogin")) {
-			%>
-			<div class="heading">
-				<h2 style="color: red">Please log in before proceeding.</h2>
-			</div>
-			<%
-			}
-			if (msg.equals("invalidEmailPassword")) {
-			%>
-			<div class="heading">
-				<h2 style="color: red">Email or password is wrong.</h2>
-			</div>
-			<%
-			}
-			if (msg.equals("invalid")) {
-			%>
-			<div class="heading">
-				<h2 style="color: red">Server Error.</h2>
-			</div>
-			<%
-			}
-			}
-			%>
+
 			<div class="col-md-6" style="margin-bottom: 30px;">
 				<div class="heading">
 					<h2>Login</h2>
@@ -57,12 +62,11 @@
 					action="${pageContext.request.contextPath}/loginUser" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Username :"
-							value="prashantvish19@gmail.com" name="email" id="email" required>
+							name="email" id="email" required>
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control"
-							placeholder="Password :" value="12345" name="password"
-							id="password" required>
+							placeholder="Password :" name="password" id="password" required>
 					</div>
 					<div class="form-group">
 						<input type="submit" class="form-control btn btn-4" value="Login">

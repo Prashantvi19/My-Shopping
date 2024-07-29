@@ -50,7 +50,7 @@
 		String bill = request.getParameter("bill");
 		String email = (String) session.getAttribute("email");
 		ResultSet rs2 = null;
-		String query2 = "SELECT pro.`productName`, pro.`price`, pro.`imageAddress`, pro.`category`, uc.`product_id`, uc.`quantity`, uc.`total` FROM `usercards` AS uc INNER JOIN `products` AS pro ON uc.`product_id` = pro.`id` WHERE  uc.`email` = ? AND uc.`product_id`= ? AND uc.`billNo` =?  AND uc.`address_id` IS  NOT NULL AND uc.`billNo` IS NOT NULL  AND uc.`orderedDate` IS NOT NULL  AND uc.`status` IS NOT NULL ; ";
+		String query2 = "SELECT pro.`productName`, pro.`price`, pro.`imageAddress`, pro.`category`, uc.`product_id`, uc.`quantity`, uc.`total`, uc.`status` FROM `usercards` AS uc INNER JOIN `products` AS pro ON uc.`product_id` = pro.`id` WHERE  uc.`email` = ? AND uc.`product_id`= ? AND uc.`billNo` =?  AND uc.`address_id` IS  NOT NULL AND uc.`billNo` IS NOT NULL  AND uc.`orderedDate` IS NOT NULL  AND uc.`status` IS NOT NULL ; ";
 
 		try {
 			PreparedStatement ps2 = DB_Connection.getDBConPs(query2);
@@ -75,12 +75,12 @@
 				<div class="col-md-9">
 					<div class="caption">
 						<div class="name">
-							<h3>
+							<h3>Product : 
 								<a href="#"><%=rs2.getString(1)%></a>
 							</h3>
 						</div>
 						<div class="name">
-							<h3>
+							<h3>Category : 
 								<a href="#"><%=rs2.getString(4)%></a>
 							</h3>
 						</div>
@@ -97,7 +97,7 @@
 						<div class="name">
 							<h3>
 								<b> Status : </b>
-								<%=rs2.getString(4)%>
+								<%=rs2.getString(8)%>
 							</h3>
 						</div>
 						<hr>

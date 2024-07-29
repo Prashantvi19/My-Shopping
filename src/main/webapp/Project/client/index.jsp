@@ -5,7 +5,6 @@
 <%@ page import="java.sql.PreparedStatement"%>
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="dot.java.moldel.*"%>
-
 <div id="page-content" class="home-page">
 	<div class="container">
 		<div class="row">
@@ -166,7 +165,7 @@
 									</div>
 									<div class="caption">
 										<div class="name">
-											<h3>
+											<h3>Product :
 												<a href="#"><%=rs.getString(2)%></a>
 											</h3>
 										</div>
@@ -230,7 +229,7 @@
 									</div>
 									<div class="caption">
 										<div class="name">
-											<h3>
+											<h3>Product :
 												<a href="#"><%=rs.getString(2)%></a>
 											</h3>
 										</div>
