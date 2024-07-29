@@ -1,5 +1,5 @@
 "# My-Shopping web application Uploading which is developping in jsp and servlet. Its database is Mysql " 
-<<<<<<< HEAD
+
 # E-Commerce Web Application
 
 Welcome to the E-Commerce Web Application project! This project showcases a fully functional online shopping platform designed to provide a seamless experience for both users and administrators.
