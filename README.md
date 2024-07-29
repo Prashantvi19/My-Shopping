@@ -82,5 +82,3 @@ This E-Commerce Web Application is built to demonstrate a comprehensive online s
 - **Development Tools:**
   - **IDE:** Eclipse
   - **Server:** Tomcat 10
-
-## Thanks
